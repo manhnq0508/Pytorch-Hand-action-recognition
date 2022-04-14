@@ -62,10 +62,14 @@ class Execute:
 
         self.x_train = raw_x_train
         self.x_test = raw_x_test
-        self.x_train = self.x_train.reshape(self.x_train.shape[0], (self.x_train.shape[1]*self.x_train.shape[2]))
-        self.x_test = self.x_test.reshape(self.x_test.shape[0], (self.x_test.shape[1]*self.x_test.shape[2]))
+        # self.x_train = self.x_train.reshape(self.x_train.shape[0], (self.x_train.shape[1]*self.x_train.shape[2]))
+        # self.x_test = self.x_test.reshape(self.x_test.shape[0], (self.x_test.shape[1]*self.x_test.shape[2]))
         print(self.x_train.shape)
-        print(self.x_train[0])
+        print(self.x_test.shape) 
+
+        print(self.y_train.shape)
+        print(self.y_test.shape)
+        # print(self.x_train[0])
 
     def train(self):
 
@@ -143,4 +147,7 @@ if __name__ == "__main__":
     args = parameter_parser()
 
     execute = Execute(args)
-    # execute.train()
+    if torch.cuda.is_available():
+        execute.train()
+    else:
+        print("cuda is not available")

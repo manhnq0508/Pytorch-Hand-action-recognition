@@ -15,7 +15,7 @@ class ModelClassifier(nn.ModuleList):
         self.dropout = nn.Dropout(0.5)
         self.embedding = nn.Embedding(
             self.input_size, self.hidden_dim, padding_idx=0)
-        self.lstm = nn.LSTM(input_size=self.hidden_dim, hidden_size=self.hidden_dim,
+        self.lstm = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_dim,
                             num_layers=self.LSTM_layers, batch_first=True)
         self.fc1 = nn.Linear(in_features=self.hidden_dim, out_features=257)
         self.fc2 = nn.Linear(257, 1)

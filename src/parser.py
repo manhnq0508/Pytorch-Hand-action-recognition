@@ -8,7 +8,7 @@ def parameter_parser():
     parser.add_argument("--epochs",
                         dest="epochs",
                         type=int,
-                        default=200,
+                        default=50,
                         help="Number of gradient descent iterations. Default is 200.")
 
     parser.add_argument("--learning_rate",
@@ -32,7 +32,7 @@ def parameter_parser():
     parser.add_argument("--batch_size",
                         dest="batch_size",
                         type=int,
-                        default=100,
+                        default=45,
                         help="Batch size")
 
     parser.add_argument("--test_size",
@@ -44,7 +44,7 @@ def parameter_parser():
     parser.add_argument("--max_len",
                         dest="max_len",
                         type=int,
-                        default=84,
+                        default=945,
                         help="Maximum sequence length per model")
 
     parser.add_argument("--max_number",
